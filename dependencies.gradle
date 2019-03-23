@@ -2,6 +2,8 @@ ext {
 
     kotlinVersion = '1.3.21'
 
+    buildTools = '3.4.0-beta04'
+
     //Rx
     rxJavaVersion = '2.2.7'
     rxKotlinVersion = '2.2.0'
