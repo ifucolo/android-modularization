@@ -8,8 +8,4 @@ interface ServerApi {
 
     @GET("/android-jobs")
     fun fetchJobs(): Single<JobsPayload>
-
-    companion object {
-        const val API_URL = "https://demo8470178.mockable.io"
-    }
 }

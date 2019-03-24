@@ -5,9 +5,10 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "jobs")
 data class AndroidJobCache(
-    @PrimaryKey
-    val title: String,
-    val requiredExperienceYears: Int,
-    val native: Boolean,
-    val country: String
+    @PrimaryKey(autoGenerate = true)
+    var id: Int = 0,
+    var title: String = "",
+    var requiredExperienceYears: Int = 0,
+    var native: Boolean = false,
+    var country: String = ""
 )
