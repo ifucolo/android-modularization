@@ -7,14 +7,16 @@ object AndroidJobCacheMapper {
 
     fun map(cacheData: List<AndroidJobCache>) = cacheData.map { map(it) }
 
-    fun map(cacheData: AndroidJobCache) = AndroidJob(
+    private fun map(cacheData: AndroidJobCache) = AndroidJob(
         title = cacheData.title,
         experienceTimeRequired = cacheData.requiredExperienceYears,
         native = cacheData.native,
         country = cacheData.country
     )
 
-    fun map(data: AndroidJob) = AndroidJobCache(
+    fun mapJobsToCache(jobs: List<AndroidJob>) = jobs.map { map(it) }
+
+    private fun map(data: AndroidJob) = AndroidJobCache(
         title = data.title,
         requiredExperienceYears = data.experienceTimeRequired,
         native = data.native,

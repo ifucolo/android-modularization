@@ -12,19 +12,25 @@ class AndroidJobsRepositoryImpl(
 ): AndroidJobsRepository {
 
     override fun getJobs(forceUpdate: Boolean): Single<List<AndroidJob>> {
-        return jobsCacheDataSource.getJobs()
+        return if (forceUpdate)
+            getJobsRemote(forceUpdate)
+        else
+            jobsCacheDataSource.getJobs()
             .flatMap { listJobs ->
                 when{
-                    forceUpdate || listJobs.isEmpty() -> getJobsRemote()
+                    listJobs.isEmpty() -> getJobsRemote(false)
                     else -> Single.just(listJobs)
                 }
             }
     }
 
-    private fun getJobsRemote(): Single<List<AndroidJob>> {
+    private fun getJobsRemote(isUpdate: Boolean): Single<List<AndroidJob>> {
         return remoteDataSource.getJobs()
             .flatMap { listJobs ->
-                listJobs.forEach { jobsCacheDataSource.insertJob(it) }
+                if (isUpdate)
+                    jobsCacheDataSource.updateData(listJobs)
+                else
+                    jobsCacheDataSource.insertData(listJobs)
                 Single.just(listJobs)
             }
     }

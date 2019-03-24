@@ -12,7 +12,12 @@ class JobsCacheSourceImpl(private val jobsDao: JobsDao): JobsCacheDataSource {
             .map { AndroidJobCacheMapper.map(it) }
     }
 
-    override fun insertJob(androidJob: AndroidJob) {
-        jobsDao.insertJob(AndroidJobCacheMapper.map(androidJob))
+    override fun insertData(list: List<AndroidJob>) {
+        jobsDao.insertAll(AndroidJobCacheMapper.mapJobsToCache(list))
     }
+
+    override fun updateData(list: List<AndroidJob>) {
+        jobsDao.updateData(AndroidJobCacheMapper.mapJobsToCache(list))
+    }
+
 }

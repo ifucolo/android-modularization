@@ -2,7 +2,7 @@ ext {
 
 
     //Android Config
-    minSDK = 15
+    minSDK = 20
     targetSDK = 28
     compileSDK = 28
 
