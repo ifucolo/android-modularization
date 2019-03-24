@@ -19,5 +19,4 @@ class JobsCacheSourceImpl(private val jobsDao: JobsDao): JobsCacheDataSource {
     override fun updateData(list: List<AndroidJob>) {
         jobsDao.updateData(AndroidJobCacheMapper.mapJobsToCache(list))
     }
-
 }

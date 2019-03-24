@@ -1,6 +1,9 @@
 package com.example.data.local.database
 
-import androidx.room.*
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.Query
+import androidx.room.Transaction
 import com.example.data.local.model.AndroidJobCache
 import io.reactivex.Single
 
@@ -12,7 +15,7 @@ interface JobsDao {
 
     @Transaction
     fun updateData(users: List<AndroidJobCache>) {
-        deleteAllUsers()
+        deleteAll()
         insertAll(users)
     }
 
@@ -20,5 +23,5 @@ interface JobsDao {
     fun insertAll(users: List<AndroidJobCache>)
 
     @Query("DELETE FROM jobs")
-    fun deleteAllUsers()
+    fun deleteAll()
 }
