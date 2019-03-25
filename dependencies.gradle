@@ -16,7 +16,7 @@ ext {
     rxAndroidVersion = '2.1.1'
 
     //Koin
-    koinVersion = '1.0.2'
+    koinVersion = '2.0.0-rc-1'
 
     //Retrofit
     retrofitVersion = '2.3.0'
@@ -25,7 +25,7 @@ ext {
     gsonVersion = '2.8.5'
 
     //Room version
-    roomVersion = '2.1.0-alpha02'
+    roomVersion = '2.1.0-alpha06'
 
     dependencies = [
             kotlin                : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
