@@ -9,7 +9,7 @@ object AndroidJobCacheMapper {
 
     private fun map(cacheData: AndroidJobCache) = AndroidJob(
         title = cacheData.title,
-        experienceTimeRequired = cacheData.requiredExperienceYears,
+        experienceTimeRequired = cacheData.requiredExperienceYears.toString(),
         native = cacheData.native,
         country = cacheData.country
     )
@@ -18,7 +18,7 @@ object AndroidJobCacheMapper {
 
     private fun map(data: AndroidJob) = AndroidJobCache(
         title = data.title,
-        requiredExperienceYears = data.experienceTimeRequired,
+        requiredExperienceYears = data.experienceTimeRequired.toInt(),
         native = data.native,
         country = data.country
     )

@@ -10,7 +10,7 @@ object AndroidJobMapper {
 
     private fun map(payload: AndroidJobPayload) = AndroidJob(
         title = payload.title,
-        experienceTimeRequired = payload.requiredExperienceYears,
+        experienceTimeRequired = payload.requiredExperienceYears.toString(),
         native = payload.native,
         country = payload.country
     )
