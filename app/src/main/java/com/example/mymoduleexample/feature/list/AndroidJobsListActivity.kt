@@ -35,8 +35,8 @@ class AndroidJobsListActivity: AppCompatActivity() {
         binding.lifecycleOwner = this
 
         setupView()
-        setupViewModel()
         setupRecyclerView()
+        setupViewModel()
     }
 
     private fun setupView() {

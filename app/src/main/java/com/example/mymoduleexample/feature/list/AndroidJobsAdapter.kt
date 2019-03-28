@@ -19,9 +19,6 @@ class AndroidJobsAdapter: RecyclerView.Adapter<AndroidJobsAdapter.ViewHolder>() 
             txtYears.text = androidJob.experienceTimeRequired
 
             chkNative.isChecked = androidJob.native
-
-            setOnClickListener {
-            }
         }
     }
 

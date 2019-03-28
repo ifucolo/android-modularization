@@ -1,10 +1,9 @@
 package com.example.mymoduleexample.feature.main
 
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import com.example.mymoduleexample.feature.viewmodel.BaseViewModel
 
-class MainViewModel: ViewModel() {
-
+class MainViewModel: BaseViewModel() {
     val showAndroidJobsLiveData = MutableLiveData<Boolean>()
     val outAppLiveData = MutableLiveData<Boolean>()
 

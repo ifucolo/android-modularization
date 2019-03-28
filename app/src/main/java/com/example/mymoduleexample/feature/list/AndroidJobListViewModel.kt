@@ -23,7 +23,8 @@ class AndroidJobListViewModel(val useCase: GetJobsUseCases, val uiScheduler: Sch
                 {
                     state.postValue(it)
                 },
-                { }
+                {
+                }
             )
     }
 
