@@ -7,11 +7,11 @@ import androidx.lifecycle.Observer
 import com.example.mymoduleexample.R
 import com.example.mymoduleexample.databinding.ActivityMainBinding
 import com.example.mymoduleexample.feature.list.AndroidJobsListActivity
-import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
 
-    private val viewModel: MainViewModel by inject()
+    private val viewModel: MainViewModel by viewModel()
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -12,11 +12,12 @@ import com.example.mymoduleexample.databinding.ActivityAndroidJobsListBinding
 import com.example.mymoduleexample.extension.visible
 import com.example.mymoduleexample.feature.viewmodel.ViewState
 import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class AndroidJobsListActivity: AppCompatActivity() {
 
-    private val viewModel: AndroidJobListViewModel by inject()
+    private val viewModel: AndroidJobListViewModel by viewModel()
     private val androidJobAdapter: AndroidJobsAdapter by inject()
 
     private lateinit var binding: ActivityAndroidJobsListBinding
