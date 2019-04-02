@@ -1,4 +1,4 @@
-Android Modularization 
+## **Android Modularization** 
 >  MVVM - KOIN - RX - ROOM - DATABINDING - CLEAN ARCH
 
 ## Resumo/Overview
@@ -19,15 +19,8 @@ Flag This project is a sample of a series of 3 articles to explain how you can c
 
 Translation in progress....
 
-## Archtecture
+## Architecture
 - MVVM
-
-## Cache
-- Room
-
-## Remote
-- Retrofit
-
 
 ## Libs
 * [Koin](https://insert-koin.io/)
