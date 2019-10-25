@@ -2,9 +2,9 @@
 >  MVVM - KOIN - RX - ROOM - DATABINDING - CLEAN ARCH
 
 ## Resumo/Overview
-![](https://github.com/ifucolo/android-modularization/blob/presentation/iconfinder_flag-brazil_748057.png) Este projeto faz parte de uma serie de 3 artigos, que ensina voce a crirar seu proprio projeto android modularizado
+![](https://github.com/ifucolo/android-modularization/blob/presentation/iconfinder_flag-brazil_748057.png) Este projeto faz parte de uma série de 3 artigos, que ensina você a crirar o seu próprio projeto Android modularizado;
 
-![](https://github.com/ifucolo/android-modularization/blob/presentation/iconfinder_flag-united-kingdom_748024.png) This project is a sample of a series of 3 articles to explain how you can create your android project aplying modularization;
+![](https://github.com/ifucolo/android-modularization/blob/presentation/iconfinder_flag-united-kingdom_748024.png) This project is a sample of a series of 3 articles to explain how you can create your android project applying modularization;
 
 ## Artigos/Articles
 ![](https://github.com/ifucolo/android-modularization/blob/presentation/iconfinder_flag-brazil_748057.png)
