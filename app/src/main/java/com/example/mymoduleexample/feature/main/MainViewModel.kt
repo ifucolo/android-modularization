@@ -1,17 +1,25 @@
 package com.example.mymoduleexample.feature.main
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.mymoduleexample.feature.viewmodel.BaseViewModel
+import com.example.mymoduleexample.utils.Event
 
 class MainViewModel: BaseViewModel() {
-    val showAndroidJobsLiveData = MutableLiveData<Boolean>()
-    val outAppLiveData = MutableLiveData<Boolean>()
+
+    private val _mainActionLiveData = MutableLiveData<Event<MainAction>>()
+    val mainActionLiveData: LiveData<Event<MainAction>> = _mainActionLiveData
 
     fun onShowAndroidJobsRequire() {
-        showAndroidJobsLiveData.postValue(true)
+        _mainActionLiveData.postValue(Event(MainAction.SHOW_JOBS))
     }
 
     fun onOutAppLiveData() {
-        outAppLiveData.postValue(true)
+        _mainActionLiveData.postValue(Event(MainAction.LEAVE_APP))
     }
+}
+
+sealed class MainAction {
+    object SHOW_JOBS: MainAction()
+    object LEAVE_APP: MainAction()
 }
