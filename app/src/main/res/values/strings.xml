@@ -5,4 +5,6 @@
     <string name="loading">Carregando…</string>
     <string name="error_generic">Ops! tivemos um problema, volte mais tarde</string>
     <string name="try_again">Tente novamente</string>
+    <string name="empty">Sem resultados.</string>
+    <string name="add">Adicionar</string>
 </resources>

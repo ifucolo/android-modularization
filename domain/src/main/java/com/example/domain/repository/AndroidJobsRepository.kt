@@ -1,8 +1,10 @@
 package com.example.domain.repository
 
 import com.example.domain.entities.AndroidJob
-import io.reactivex.Single
+import com.example.domain.responses.ResultRequired
+import kotlinx.coroutines.flow.Flow
 
 interface AndroidJobsRepository {
-    fun getJobs(forceUpdate: Boolean): Single<List<AndroidJob>>
+    fun getJobs(): Flow<ResultRequired<List<AndroidJob>>>
+    fun add()
 }

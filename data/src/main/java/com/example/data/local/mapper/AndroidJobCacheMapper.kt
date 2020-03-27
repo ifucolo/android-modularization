@@ -16,7 +16,7 @@ object AndroidJobCacheMapper {
 
     fun mapJobsToCache(jobs: List<AndroidJob>) = jobs.map { map(it) }
 
-    private fun map(data: AndroidJob) = AndroidJobCache(
+    fun map(data: AndroidJob) = AndroidJobCache(
         title = data.title,
         requiredExperienceYears = data.experienceTimeRequired.toInt(),
         native = data.native,

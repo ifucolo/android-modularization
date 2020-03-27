@@ -7,10 +7,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.domain.entities.AndroidJob
 import com.example.mymoduleexample.R
 import com.example.mymoduleexample.databinding.ActivityAndroidJobsListBinding
+import com.example.mymoduleexample.extension.hide
+import com.example.mymoduleexample.extension.show
 import com.example.mymoduleexample.extension.visible
 import com.example.mymoduleexample.feature.viewmodel.ViewState
+import com.example.mymoduleexample.utils.exhaustive
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -18,9 +22,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class AndroidJobsListActivity: AppCompatActivity() {
 
     private val viewModel: AndroidJobListViewModel by viewModel()
-    private val androidJobAdapter: AndroidJobsAdapter by inject()
-
     private lateinit var binding: ActivityAndroidJobsListBinding
+    private lateinit var androidJobsAdapter: AndroidJobsAdapter
 
     companion object {
         fun launchIntent(context: Context): Intent {
@@ -36,46 +39,59 @@ class AndroidJobsListActivity: AppCompatActivity() {
         binding.lifecycleOwner = this
 
         setupView()
-        setupRecyclerView()
         setupViewModel()
     }
 
     private fun setupView() {
-        setSupportActionBar(binding.toolbar);
+        setSupportActionBar(binding.toolbar)
         binding.toolbar.setNavigationIcon(R.drawable.abc_ic_ab_back_material)
         binding.toolbar.setNavigationOnClickListener{
             finish()
         }
+
+        setupRecyclerView()
     }
 
     private fun setupViewModel() {
         viewModel.getJobs()
 
-        viewModel.state.observe(this, Observer { state ->
-            when(state) {
-                is ViewState.Success -> {
-                    androidJobAdapter.jobs = state.data
-                    setVisibilities(showList = true)
-                }
-                is ViewState.Loading -> {
-                    setVisibilities(showProgressBar = true)
-                }
-                is ViewState.Failed -> {
-                    setVisibilities(showError = true)
-                }
+        viewModel.viewJobsStatesLiveData.observe(this, Observer { state ->
+            state.getContentIfNotHandled()?.let {
+                hideAll()
+
+                when(it) {
+                    is AndroidJobListViewModel.ViewJobsStates.Show -> showContent(it.list)
+                    AndroidJobListViewModel.ViewJobsStates.Empty -> showEmptyState()
+                    AndroidJobListViewModel.ViewJobsStates.Error -> showError()
+                }.exhaustive
             }
         })
     }
 
-
     private fun setupRecyclerView() = with(binding.recyclerView) {
+        androidJobsAdapter = AndroidJobsAdapter()
+
         layoutManager = LinearLayoutManager(context)
-        adapter = androidJobAdapter
+        adapter = androidJobsAdapter
     }
 
-    private fun setVisibilities(showProgressBar: Boolean = false, showList: Boolean = false, showError: Boolean = false) {
-        binding.progressBar.visible(showProgressBar)
-        binding.recyclerView.visible(showList)
-        binding.btnTryAgain.visible(showError)
+    private fun showError() {
+        binding.btnTryAgain.show()
+    }
+
+    private fun showEmptyState() {
+        binding.txtEmpty.show()
+    }
+
+    private fun showContent(list: List<AndroidJob>) = with(androidJobsAdapter) {
+        jobs = list
+        notifyDataSetChanged()
+        binding.recyclerView.show()
+    }
+
+    private fun hideAll() {
+        listOf(binding.btnTryAgain, binding.txtEmpty, binding.recyclerView, binding.progressBar).map {
+            it.hide()
+        }
     }
 }

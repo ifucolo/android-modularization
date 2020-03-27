@@ -2,10 +2,10 @@ package com.example.mymoduleexample.feature.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.mymoduleexample.feature.viewmodel.BaseViewModel
+import androidx.lifecycle.ViewModel
 import com.example.mymoduleexample.utils.Event
 
-class MainViewModel: BaseViewModel() {
+class MainViewModel: ViewModel() {
 
     private val _mainActionLiveData = MutableLiveData<Event<MainAction>>()
     val mainActionLiveData: LiveData<Event<MainAction>> = _mainActionLiveData

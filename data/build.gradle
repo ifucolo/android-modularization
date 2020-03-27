@@ -32,8 +32,11 @@ dependencies {
     implementation dependencies.gson
 
     implementation dependencies.room
-    implementation dependencies.roomRxJava
+    implementation dependencies.roomKtx
     kapt dependencies.roomCompiler
 
     implementation dependencies.koin
+
+    implementation dependencies.coroutinesCore
+    implementation dependencies.coroutinesAndroid
 }

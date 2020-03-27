@@ -6,12 +6,13 @@ import androidx.room.Query
 import androidx.room.Transaction
 import com.example.data.local.model.AndroidJobCache
 import io.reactivex.Single
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface JobsDao {
 
     @Query("SELECT * FROM jobs")
-    fun getJobs(): Single<List<AndroidJobCache>>
+    fun getJobs(): Flow<List<AndroidJobCache>>
 
     @Transaction
     fun updateData(users: List<AndroidJobCache>) {
@@ -21,6 +22,9 @@ interface JobsDao {
 
     @Insert
     fun insertAll(users: List<AndroidJobCache>)
+
+    @Insert
+    fun insert(vararg job: AndroidJobCache)
 
     @Query("DELETE FROM jobs")
     fun deleteAll()

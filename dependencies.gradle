@@ -3,22 +3,24 @@ ext {
 
     //Android Config
     minSDK = 20
-    targetSDK = 28
-    compileSDK = 28
+    targetSDK = 29
+    compileSDK = 29
 
     buildTools = '3.5.0'
 
     appCompactVersion = '1.0.2'
-    kotlinVersion = '1.3.21'
+    kotlinVersion = '1.3.61'
 
     AndroidArchVersion = '1.1.1'
     databindingVersion = '3.1.4'
-    lifeCycleVersion = '2.0.0'
+    lifeCycleVersion = '2.1.0'
     ktxVersion = '1.0.1'
 
     constrainVersion = '1.1.3'
     cardViewVersion = '1.0.0'
     recyclerViewVersion = '1.0.0'
+
+    coroutineVersion = '1.3.3'
 
     //Rx
     rxJavaVersion = '2.2.7'
@@ -29,26 +31,31 @@ ext {
     koinVersion = '2.0.0-rc-1'
 
     //Retrofit
-    retrofitVersion = '2.3.0'
+    retrofitVersion = '2.6.0'
 
     //Gson
     gsonVersion = '2.8.5'
 
     //Room version
-    roomVersion = '2.1.0-alpha06'
+    roomVersion = '2.2.3'
 
     //Test
     junitVersion = '4.12'
     espressoVersion = '3.1.1'
     runnerVersion = '1.1.1'
 
+    materialVersion = '1.1.0'
+
     dependencies = [
             kotlin                : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+            coroutinesCore        : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion",
+            coroutinesAndroid     : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion",
 
             appCompact            : "androidx.appcompat:appcompat:$appCompactVersion",
             constraintlayout      : "androidx.constraintlayout:constraintlayout:$constrainVersion",
             cardView              : "androidx.cardview:cardview:$cardViewVersion",
             recyclerView          : "androidx.recyclerview:recyclerview:$recyclerViewVersion",
+            material              : "com.google.android.material:material:$materialVersion",
 
             viewModel             : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifeCycleVersion",
             lifeCycle             : "android.arch.lifecycle:extensions:$AndroidArchVersion",
@@ -71,7 +78,8 @@ ext {
 
             room                  : "androidx.room:room-runtime:$roomVersion",
             roomRxJava            : "androidx.room:room-rxjava2:$roomVersion",
-            roomCompiler          : "androidx.room:room-compiler:$roomVersion"
+            roomCompiler          : "androidx.room:room-compiler:$roomVersion",
+            roomKtx               : "androidx.room:room-ktx:$roomVersion"
     ]
 
     testDependecies = [

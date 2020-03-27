@@ -8,14 +8,11 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val presentationModule = module {
-
-    factory { AndroidJobsAdapter() }
-
     viewModel { MainViewModel() }
 
-    viewModel { AndroidJobListViewModel(
-            useCase = get(),
-            uiScheduler = AndroidSchedulers.mainThread()
+    viewModel {
+        AndroidJobListViewModel(
+            jobsUseCase = get()
         )
     }
 }

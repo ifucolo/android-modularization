@@ -3,12 +3,16 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
+
 android {
-    compileSdkVersion 28
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion globalConfiguration["compileSDK"]
+
     defaultConfig {
         applicationId "com.example.mymoduleexample"
-        minSdkVersion 20
-        targetSdkVersion 28
+        minSdkVersion globalConfiguration["minSDK"]
+        targetSdkVersion globalConfiguration["targetSDK"]
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -43,7 +47,7 @@ dependencies {
     implementation dependencies.appCompact
     implementation dependencies.cardView
     implementation dependencies.recyclerView
-
+    implementation dependencies.material
     implementation dependencies.kotlin
 
     implementation dependencies.ktx
@@ -59,6 +63,9 @@ dependencies {
     implementation dependencies.rxJava
     implementation dependencies.rxKotlin
     implementation dependencies.rxAndroid
+
+    implementation dependencies.coroutinesCore
+    implementation dependencies.coroutinesAndroid
 
 
     kapt dependencies.dataBinding

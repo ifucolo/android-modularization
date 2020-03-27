@@ -9,6 +9,6 @@ data class AndroidJobCache(
     var id: Int = 0,
     var title: String = "",
     var requiredExperienceYears: Int = 0,
-    var native: Boolean = false,
+    var native: Boolean = true,
     var country: String = ""
 )

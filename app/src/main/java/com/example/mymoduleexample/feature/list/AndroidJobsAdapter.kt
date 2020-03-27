@@ -7,9 +7,7 @@ import com.example.mymoduleexample.R
 import com.example.mymoduleexample.extension.inflate
 import kotlinx.android.synthetic.main.item_android_job.view.*
 
-class AndroidJobsAdapter: RecyclerView.Adapter<AndroidJobsAdapter.ViewHolder>() {
-
-    var jobs: List<AndroidJob> = listOf()
+class AndroidJobsAdapter(var jobs: List<AndroidJob> = listOf()): RecyclerView.Adapter<AndroidJobsAdapter.ViewHolder>() {
 
     inner class ViewHolder(parent: ViewGroup): RecyclerView.ViewHolder(parent.inflate(R.layout.item_android_job)) {
 
