@@ -1,14 +1,8 @@
 package com.example.data.local.source
 
 import com.example.data.local.database.JobsDao
-import com.example.data.local.mapper.AndroidJobCacheMapper
 import com.example.data.local.model.AndroidJobCache
-import com.example.domain.entities.AndroidJob
-import com.example.domain.responses.ResultRequired
-import io.reactivex.Single
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.map
 
 interface JobsCacheDataSource {
     fun getJobs(): Flow<List<AndroidJobCache>>

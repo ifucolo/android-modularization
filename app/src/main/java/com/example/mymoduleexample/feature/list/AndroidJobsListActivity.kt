@@ -13,7 +13,6 @@ import com.example.mymoduleexample.databinding.ActivityAndroidJobsListBinding
 import com.example.mymoduleexample.extension.hide
 import com.example.mymoduleexample.extension.show
 import com.example.mymoduleexample.extension.visible
-import com.example.mymoduleexample.feature.viewmodel.ViewState
 import com.example.mymoduleexample.utils.exhaustive
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel

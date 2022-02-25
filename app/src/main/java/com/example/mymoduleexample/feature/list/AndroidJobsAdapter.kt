@@ -5,18 +5,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.domain.entities.AndroidJob
 import com.example.mymoduleexample.R
 import com.example.mymoduleexample.extension.inflate
-import kotlinx.android.synthetic.main.item_android_job.view.*
 
 class AndroidJobsAdapter(var jobs: List<AndroidJob> = listOf()): RecyclerView.Adapter<AndroidJobsAdapter.ViewHolder>() {
 
     inner class ViewHolder(parent: ViewGroup): RecyclerView.ViewHolder(parent.inflate(R.layout.item_android_job)) {
 
         fun bind(androidJob: AndroidJob) = with(itemView) {
-            txtTitle.text = androidJob.title
-            txtCountry.text = androidJob.country
-            txtYears.text = androidJob.experienceTimeRequired
-
-            chkNative.isChecked = androidJob.native
+//            txtTitle.text = androidJob.title
+//            txtCountry.text = androidJob.country
+//            txtYears.text = androidJob.experienceTimeRequired
+//
+//            chkNative.isChecked = androidJob.native
         }
     }
 

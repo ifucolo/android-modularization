@@ -2,12 +2,8 @@ package com.example.data.remote.source
 
 import com.example.data.extensions.mapRemoteErrors
 import com.example.data.remote.api.ServerApi
-import com.example.data.remote.mapper.AndroidJobMapper
 import com.example.data.remote.model.JobsPayload
-import com.example.domain.entities.AndroidJob
 import com.example.domain.responses.ResultRemote
-import io.reactivex.Single
-import java.lang.Exception
 
 interface RemoteDataSource {
     suspend fun getJobs(): ResultRemote<JobsPayload>

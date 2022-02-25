@@ -1,6 +1,5 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 
@@ -27,6 +26,19 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion composeVersion
+
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+        useIR = true
     }
 }
 
@@ -60,13 +72,14 @@ dependencies {
     implementation dependencies.koin
     implementation dependencies.koinViewModel
 
-    implementation dependencies.rxJava
-    implementation dependencies.rxKotlin
-    implementation dependencies.rxAndroid
-
     implementation dependencies.coroutinesCore
     implementation dependencies.coroutinesAndroid
 
+    implementation dependencies.composeUi
+    implementation dependencies.composeMaterial
+    implementation dependencies.composeTooling
+    implementation dependencies.composeLivedata
+    implementation dependencies.lifecycleKtx
 
     kapt dependencies.dataBinding
 

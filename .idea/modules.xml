@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/android-modularization.iml" filepath="$PROJECT_DIR$/android-modularization.iml" />
-      <module fileurl="file://$PROJECT_DIR$/android-my-bootcamp-android-modularization.iml" filepath="$PROJECT_DIR$/android-my-bootcamp-android-modularization.iml" group="android-modularization" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="android-modularization/app" />
-      <module fileurl="file://$PROJECT_DIR$/data/data.iml" filepath="$PROJECT_DIR$/data/data.iml" group="android-modularization/data" />
-      <module fileurl="file://$PROJECT_DIR$/domain/domain.iml" filepath="$PROJECT_DIR$/domain/domain.iml" group="android-modularization/domain" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android-modularization.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android-modularization.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/android-modularization.data.iml" filepath="$PROJECT_DIR$/.idea/modules/data/android-modularization.data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/android-modularization.domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/android-modularization.domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gthub.android-modularization.iml" filepath="$PROJECT_DIR$/.idea/modules/gthub.android-modularization.iml" />
     </modules>
   </component>
 </project>
