@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
-
+apply plugin: 'dagger.hilt.android.plugin'
 
 android {
     def globalConfiguration = rootProject.extensions.getByName("ext")
@@ -69,9 +69,6 @@ dependencies {
 
     implementation dependencies.lifeCycle
 
-    implementation dependencies.koin
-    implementation dependencies.koinViewModel
-
     implementation dependencies.coroutinesCore
     implementation dependencies.coroutinesAndroid
 
@@ -81,12 +78,19 @@ dependencies {
     implementation dependencies.composeLivedata
     implementation dependencies.composeActivity
     implementation dependencies.composeNavigation
+    implementation 'androidx.hilt:hilt-navigation-compose:1.0.0'
+
     implementation dependencies.lifecycleKtx
 
     implementation 'com.google.dagger:hilt-android:2.38.1'
     kapt 'com.google.dagger:hilt-android-compiler:2.38.1'
-
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.0'
 
     kapt dependencies.dataBinding
 
+}
+
+
+kapt {
+    correctErrorTypes = true
 }

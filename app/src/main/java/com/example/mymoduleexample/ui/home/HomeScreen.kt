@@ -13,21 +13,23 @@ import com.example.mymoduleexample.R
 import com.example.mymoduleexample.ui.Screens
 
 
-internal fun NavGraphBuilder.addHomeScreenGraph() {
+internal fun NavGraphBuilder.addHomeScreenGraph(onClick: () -> Unit) {
     composable(route = Screens.Home.route) {
-        HomeScreen()
+        HomeScreen(onClick)
     }
 }
 
 @Composable
 fun HomeScreen(
-    mainViewModel: MainViewModel
+    onClick: () -> Unit
 ) {
     Box(Modifier.fillMaxSize()) {
-        Button(onClick = {
-            mainViewModel.onShowAndroidJobsRequire()
-        }) {
+        Button(onClick) {
             Text(text = stringResource(id = R.string.show_list))
         }
     }
+}
+
+private fun setupViewModel() {
+
 }

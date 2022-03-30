@@ -1,15 +1,19 @@
-apply plugin: 'java-library'
-apply plugin: 'kotlin'
+plugins {
+    id 'java-library'
+    id 'org.jetbrains.kotlin.jvm'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
+}
+
 
 dependencies {
 
     def dependencies = rootProject.ext.dependencies
+    api "javax.inject:javax.inject:1"
 
     implementation dependencies.kotlin
-    implementation dependencies.koin
-
     implementation dependencies.coroutinesCore
 }
-
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8

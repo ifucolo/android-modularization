@@ -22,9 +22,6 @@ ext {
 
     coroutineVersion = '1.6.0'
 
-    //Koin
-    koinVersion = '2.0.0-rc-1'
-
     //Retrofit
     retrofitVersion = '2.6.0'
 
@@ -66,9 +63,6 @@ ext {
             dataBinding           : "com.android.databinding:compiler:$databindingVersion",
 
             ktx                   : "androidx.core:core-ktx:$ktxVersion",
-
-            koin                  : "org.koin:koin-android:$koinVersion",
-            koinViewModel         : "org.koin:koin-androidx-viewmodel:$koinVersion",
 
             retrofit              : "com.squareup.retrofit2:retrofit:$retrofitVersion",
             retrofitGsonConverter : "com.squareup.retrofit2:converter-gson:$retrofitVersion",

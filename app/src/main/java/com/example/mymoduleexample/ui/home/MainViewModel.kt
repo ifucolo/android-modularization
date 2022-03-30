@@ -4,8 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.mymoduleexample.utils.Event
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class MainViewModel: ViewModel() {
+@HiltViewModel
+class MainViewModel @Inject constructor(): ViewModel() {
 
     private val _mainActionLiveData = MutableLiveData<Event<MainAction>>()
     val mainActionLiveData: LiveData<Event<MainAction>> = _mainActionLiveData

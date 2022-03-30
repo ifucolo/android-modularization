@@ -10,8 +10,9 @@ import com.example.domain.responses.ResultRemote
 import com.example.domain.responses.ResultRequired
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
 
-class AndroidJobsRepositoryImpl(
+class AndroidJobsRepositoryImpl @Inject constructor(
     private val jobsCacheDataSource: JobsCacheDataSource,
     private val remoteDataSource: RemoteDataSource
 ): AndroidJobsRepository {

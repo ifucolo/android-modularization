@@ -4,12 +4,13 @@ import com.example.data.extensions.mapRemoteErrors
 import com.example.data.remote.api.ServerApi
 import com.example.data.remote.model.JobsPayload
 import com.example.domain.responses.ResultRemote
+import javax.inject.Inject
 
 interface RemoteDataSource {
     suspend fun getJobs(): ResultRemote<JobsPayload>
 }
 
-class RemoteDataSourceImpl(
+class RemoteDataSourceImpl @Inject constructor(
     private val serverApi: ServerApi
 ): RemoteDataSource {
 

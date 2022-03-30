@@ -1,12 +1,11 @@
 package com.example.mymoduleexample
 
 import android.app.Application
-import com.example.data.di.dataModules
-import com.example.domain.di.domainModule
-import com.example.mymoduleexample.di.presentationModule
+import dagger.hilt.android.HiltAndroidApp
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
+@HiltAndroidApp
 class MyModuleApplication: Application() {
 
     override fun onCreate() {
@@ -14,8 +13,6 @@ class MyModuleApplication: Application() {
 
         startKoin {
             androidContext(this@MyModuleApplication)
-
-            modules(domainModule + dataModules + listOf(presentationModule))
         }
     }
 }

@@ -1,34 +1,33 @@
 package com.example.mymoduleexample.ui.list
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.domain.entities.AndroidJob
 import com.example.domain.usecases.GetJobsUseCases
-import com.example.mymoduleexample.utils.Event
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-
-class AndroidJobListViewModel(
+@HiltViewModel
+class AndroidJobListViewModel @Inject constructor(
     private val jobsUseCase: GetJobsUseCases
 ): ViewModel() {
 
+    private val _state: MutableStateFlow<JobsUiStateState> = MutableStateFlow(JobsUiStateState.Loading)
+    val state: StateFlow<JobsUiStateState> = _state
 
-    private val _viewJobsStatesLiveData = MutableLiveData<Event<ViewJobsStates>>()
-    val viewJobsStatesLiveData: LiveData<Event<ViewJobsStates>> = _viewJobsStatesLiveData
-
-    fun getJobs() {
+    init {
         viewModelScope.launch(Dispatchers.IO) {
-            jobsUseCase.getJobs().collect {
-                val resultJobs = when(it) {
-                    is GetJobsUseCases.ResultJobs.Jobs -> ViewJobsStates.Show(it.list)
-                    GetJobsUseCases.ResultJobs.NoJobs -> ViewJobsStates.Empty
-                    GetJobsUseCases.ResultJobs.Error -> ViewJobsStates.Error
+            jobsUseCase.stream.collect { result ->
+                when(result) {
+                    GetJobsUseCases.ResultJobs.Error -> _state.emit(JobsUiStateState.Error)
+                    is GetJobsUseCases.ResultJobs.Jobs -> _state.emit(JobsUiStateState.Show(list = result.list))
+                    GetJobsUseCases.ResultJobs.NoJobs -> _state.emit(JobsUiStateState.Empty)
+                    GetJobsUseCases.ResultJobs.Loading -> _state.emit(JobsUiStateState.Loading)
                 }
-
-                _viewJobsStatesLiveData.postValue(Event(resultJobs))
             }
         }
     }
@@ -40,12 +39,15 @@ class AndroidJobListViewModel(
     }
 
     fun onTryAgainRequired() {
-        getJobs()
+        viewModelScope.launch {
+            jobsUseCase.fetchJobs()
+        }
     }
 
-    sealed class ViewJobsStates {
-        data class Show(val list: List<AndroidJob>): ViewJobsStates()
-        object Empty: ViewJobsStates()
-        object Error: ViewJobsStates()
+    sealed class JobsUiStateState {
+        data class Show(val list: List<AndroidJob>): JobsUiStateState()
+        object Empty: JobsUiStateState()
+        object Error: JobsUiStateState()
+        object Loading: JobsUiStateState()
     }
 }

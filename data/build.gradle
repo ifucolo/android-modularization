@@ -22,18 +22,18 @@ dependencies {
     def dependencies = rootProject.ext.dependencies
 
     implementation project(":domain")
+    implementation project(":di")
+    api "javax.inject:javax.inject:1"
 
     implementation dependencies.kotlin
 
-    implementation dependencies.retrofit
-    implementation dependencies.retrofitGsonConverter
-    implementation dependencies.gson
+    api dependencies.retrofit
+    api dependencies.retrofitGsonConverter
+    api dependencies.gson
 
     implementation dependencies.room
     implementation dependencies.roomKtx
     kapt dependencies.roomCompiler
-
-    implementation dependencies.koin
 
     implementation dependencies.coroutinesCore
     implementation dependencies.coroutinesAndroid

@@ -8,21 +8,17 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.Observer
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import com.example.mymoduleexample.databinding.ActivityMainBinding
-import com.example.mymoduleexample.ui.list.AndroidJobsListActivity
 import com.example.mymoduleexample.theme.AppTheme
 import com.example.mymoduleexample.ui.Screens
 import com.example.mymoduleexample.ui.list.addListJobsScreenGraph
 import com.example.mymoduleexample.utils.exhaustive
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-
-    private val viewModel: MainViewModel by viewModel()
-    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,26 +35,31 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    private fun setupViewModel() {
-        viewModel.mainActionLiveData.observe(this, Observer {
-            it.getContentIfNotHandled()?.let { mainAction ->
-                when(mainAction) {
-                    MainViewModel.MainAction.SHOW_JOBS -> startActivity(AndroidJobsListActivity.launchIntent(this))
-                    MainViewModel.MainAction.LEAVE_APP -> finish()
-                }.exhaustive
-            }
-        })
-    }
-
     @Composable
     fun MyApp() {
         val navController = rememberNavController()
+        val viewModel = hiltViewModel<MainViewModel>()
 
         NavHost(navController,
             startDestination = Screens.Home.route
         ) {
-            addHomeScreenGraph()
+            addHomeScreenGraph(
+                onClick = {
+                    viewModel.onShowAndroidJobsRequire()
+                }
+            )
             addListJobsScreenGraph()
+        }
+
+        viewModel.mainActionLiveData.observe(this) {
+            it.getContentIfNotHandled()?.let { mainAction ->
+                when (mainAction) {
+                    MainViewModel.MainAction.SHOW_JOBS -> {
+                        navController.navigate(Screens.ListJobs.route)
+                    }
+                    MainViewModel.MainAction.LEAVE_APP -> finish()
+                }.exhaustive
+            }
         }
     }
 }

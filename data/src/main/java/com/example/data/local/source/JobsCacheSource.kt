@@ -3,6 +3,7 @@ package com.example.data.local.source
 import com.example.data.local.database.JobsDao
 import com.example.data.local.model.AndroidJobCache
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
 interface JobsCacheDataSource {
     fun getJobs(): Flow<List<AndroidJobCache>>
@@ -11,7 +12,9 @@ interface JobsCacheDataSource {
     fun updateData(cacheList: List<AndroidJobCache>)
 }
 
-class JobsCacheSourceImpl(private val jobsDao: JobsDao): JobsCacheDataSource {
+class JobsCacheSourceImpl @Inject constructor(
+    private val jobsDao: JobsDao
+): JobsCacheDataSource {
 
     override fun getJobs(): Flow<List<AndroidJobCache>> = jobsDao.getJobs()
 
