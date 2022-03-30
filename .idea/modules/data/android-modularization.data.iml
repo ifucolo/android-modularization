@@ -4,8 +4,8 @@
     <facet type="android-gradle" name="Android-Gradle">
       <configuration>
         <option name="GRADLE_PROJECT_PATH" value=":data" />
-        <option name="LAST_SUCCESSFUL_SYNC_AGP_VERSION" value="7.1.1" />
-        <option name="LAST_KNOWN_AGP_VERSION" value="7.1.1" />
+        <option name="LAST_SUCCESSFUL_SYNC_AGP_VERSION" value="4.2.2" />
+        <option name="LAST_KNOWN_AGP_VERSION" value="4.2.2" />
       </configuration>
     </facet>
     <facet type="android" name="Android">
@@ -32,7 +32,7 @@
         </compilerSettings>
         <compilerArguments>
           <option name="destination" value="$MODULE_DIR$/../../../data/build/tmp/kotlin-classes/debug" />
-          <option name="classpath" value="$MODULE_DIR$/../../../data/build/intermediates/compile_r_class_jar/debug/R.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/389c281b5f864817120ddc36a58e453d/transformed/jetified-kotlin-stdlib-jdk7-1.6.10.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/e86e37c17eeab5058e0d28ecd6920355/transformed/jetified-room-ktx-2.2.3-api.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/d7eae7697a504e99c964bda4a8c92165/transformed/jetified-kotlinx-coroutines-android-1.3.3.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/23552e4888dd03d3ebb4e93c2e00d7ad/transformed/jetified-kotlinx-coroutines-core-1.3.3.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/682388af2ba05610c66f3ca35f32ba4d/transformed/jetified-koin-android-2.0.0-rc-1-api.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/5142be8b6783063af7324580db5a13f2/transformed/jetified-koin-core-2.0.0-rc-1.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/ec6b7ebe5d3d1eb4fcaaf99c42b7a505/transformed/jetified-kotlin-stdlib-1.6.10.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/e2252d9c83ad2753b2e993d06b07963e/transformed/jetified-annotations-13.0.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/ec267bdc927dd97f7c3867d2e60f7b22/transformed/jetified-kotlin-stdlib-common-1.6.10.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/99747f9416fde05b7e356aae04686076/transformed/jetified-converter-gson-2.6.0.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/4660a5c35e48e496d0ac447e4d88b623/transformed/jetified-retrofit-2.6.0.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/fe04a935c3c4815420c7c667e791dd16/transformed/jetified-okhttp-3.12.0.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/c5a67e2572770b14eb7aa207ecccfe97/transformed/jetified-okio-1.15.0.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/747b013d0a4f8b858ae645e26431a18a/transformed/jetified-gson-2.8.5.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/357170fe38dd771bf3dd90f541102eeb/transformed/room-runtime-2.2.3-api.jar:/Users/iagomendesfucolo/.gradle/caches/modules-2/files-2.1/androidx.room/room-common/2.2.3/f5e3b73a0c2ab5e276e26868e4ce3542baede207/room-common-2.2.3.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/cac866ef0293dd137039adffb49edc5c/transformed/sqlite-framework-2.0.1-api.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/defebca8b21d04bbf6633ad8e3a381a7/transformed/sqlite-2.0.1-api.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/9888ea04d6edb8b09ac15fe5bb67b71e/transformed/core-runtime-2.0.1-api.jar:/Users/iagomendesfucolo/.gradle/caches/modules-2/files-2.1/androidx.arch.core/core-common/2.0.1/3e8d84e4fe526be0ca1832a518bf323e729a79fd/core-common-2.0.1.jar:/Users/iagomendesfucolo/.gradle/caches/modules-2/files-2.1/androidx.annotation/annotation/1.1.0/e3a6fb2f40e3a3842e6b7472628ba4ce416ea4c8/annotation-1.1.0.jar:/Users/iagomendesfucolo/Desktop/workspace/opensources/gthub/android-modularization/domain/build/.transforms/02c3a7496c30cee8e2b0543be482eaea/transformed/jetified-domain.jar:/Users/iagomendesfucolo/Library/Android/sdk/platforms/android-31/android.jar:/Users/iagomendesfucolo/Library/Android/sdk/build-tools/30.0.3/core-lambda-stubs.jar" />
+          <option name="classpath" value="$MODULE_DIR$/../../../data/build/intermediates/compile_r_class_jar/debug/R.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/423b7416a4ca2e3b48e562bd8638c6cf/transformed/jetified-room-ktx-2.2.3-api.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/64bef1fa61d49441988d1349c1cf5046/transformed/jetified-koin-android-2.0.0-rc-1-api.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/cd483d986bc59aa45b412a5d4d796a39/transformed/jetified-koin-core-2.0.0-rc-1.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/845dd6929dcd648c9571f98f3797d3cb/transformed/jetified-kotlinx-coroutines-core-jvm-1.6.0.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/1efb55fe1a0b8f046857bcdd73d98061/transformed/jetified-kotlinx-coroutines-android-1.6.0.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/2045624b2668e3789121fb0ba6b040ca/transformed/jetified-kotlin-stdlib-jdk8-1.6.0.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/3314c06db817d2b9ba7fa6ea9c157d0a/transformed/jetified-kotlin-stdlib-jdk7-1.6.0.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/570e27fcd162d7b54254ba656c790be6/transformed/jetified-kotlin-stdlib-1.6.10.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/3fc4285caccfde64792dfb1b69908420/transformed/jetified-annotations-13.0.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/e3b627a7a8dc9df6d8ee19c23abc7219/transformed/jetified-kotlin-stdlib-common-1.6.10.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/19e3f3a30f3baa5336918953b67e3abf/transformed/jetified-converter-gson-2.6.0.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/e38590d591b836a232a931a31f015206/transformed/jetified-retrofit-2.6.0.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/06f00db45b9f06538919088da8e99ecd/transformed/jetified-okhttp-3.12.0.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/f4a62ee0085b0db757b2234a37f3e28a/transformed/jetified-okio-1.15.0.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/e9f9e71fb0987fff764a7d00b74d6ea2/transformed/jetified-gson-2.8.5.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/4b23d9cd629f7d8c7d46d302c46386b3/transformed/room-runtime-2.2.3-api.jar:/Users/iagomendesfucolo/.gradle/caches/modules-2/files-2.1/androidx.room/room-common/2.2.3/f5e3b73a0c2ab5e276e26868e4ce3542baede207/room-common-2.2.3.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/41e0dd364f01e1c7abe11b6d2f26cbab/transformed/sqlite-framework-2.0.1-api.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/6e4879597a57c66a20186afeba9bd80e/transformed/sqlite-2.0.1-api.jar:/Users/iagomendesfucolo/.gradle/caches/transforms-3/6e7cfe878cc01513d1097e8937afa7d5/transformed/core-runtime-2.0.1-api.jar:/Users/iagomendesfucolo/.gradle/caches/modules-2/files-2.1/androidx.arch.core/core-common/2.0.1/3e8d84e4fe526be0ca1832a518bf323e729a79fd/core-common-2.0.1.jar:/Users/iagomendesfucolo/.gradle/caches/modules-2/files-2.1/androidx.annotation/annotation/1.1.0/e3a6fb2f40e3a3842e6b7472628ba4ce416ea4c8/annotation-1.1.0.jar:/Users/iagomendesfucolo/Desktop/workspace/opensources/gthub/android-modularization/domain/build/.transforms/00c930b3ada94416d55a8ae281ce3393/transformed/jetified-domain.jar:/Users/iagomendesfucolo/Library/Android/sdk/platforms/android-31/android.jar:/Users/iagomendesfucolo/Library/Android/sdk/build-tools/30.0.2/core-lambda-stubs.jar" />
           <option name="noStdlib" value="true" />
           <option name="moduleName" value="data_debug" />
           <option name="languageVersion" value="1.6" />
@@ -106,45 +106,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.10">
-        <CLASSES>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/1.6.10/e1c380673654a089c4f0c9f83d0ddfdc1efdb498/kotlin-stdlib-jdk7-1.6.10.jar!/" />
-        </CLASSES>
-        <JAVADOC>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/1.6.10/5b8f86fea035328fc9e8c660773037a3401ce25f/kotlin-stdlib-jdk7-1.6.10-javadoc.jar!/" />
-        </JAVADOC>
-        <SOURCES>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/1.6.10/ccdfdab71f0f3ba104191d8f673d0620e7ed2e46/kotlin-stdlib-jdk7-1.6.10-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.3">
-        <CLASSES>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-android/1.3.3/32b68c0fddc57d7c88bc9ce4eb647ba219bf6eeb/kotlinx-coroutines-android-1.3.3.jar!/" />
-        </CLASSES>
-        <JAVADOC>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-android/1.3.3/c4407febdd412cd24f77d1de25c11a7fd4a784e9/kotlinx-coroutines-android-1.3.3-javadoc.jar!/" />
-        </JAVADOC>
-        <SOURCES>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-android/1.3.3/2a4de6abf1cb836f4aa28891f63c70b111c00310/kotlinx-coroutines-android-1.3.3-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.3">
-        <CLASSES>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core/1.3.3/5bac48cf5828e9b006f3b1ef6e37d2a70c2e7321/kotlinx-coroutines-core-1.3.3.jar!/" />
-        </CLASSES>
-        <JAVADOC>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core/1.3.3/b6acc50c0c0a023772daf31cee4539f1463622f8/kotlinx-coroutines-core-1.3.3-javadoc.jar!/" />
-        </JAVADOC>
-        <SOURCES>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core/1.3.3/57f8b1a2d7c5816e5b93e39f75b9e341d2045d1b/kotlinx-coroutines-core-1.3.3-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="Gradle: org.koin:koin-core:2.0.0-rc-1">
         <CLASSES>
           <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.koin/koin-core/2.0.0-rc-1/33454f0b428cc1ad13aaba6cf94dc3e869c4edee/koin-core-2.0.0-rc-1.jar!/" />
@@ -154,6 +115,46 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.koin/koin-core/2.0.0-rc-1/71936353ad20101c6c5d6535b7f711444262a6a/koin-core-2.0.0-rc-1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.0">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm/1.6.0/f3b8fd26c2e76d2f18cbc36aacb6e349fcb9fd5f/kotlinx-coroutines-core-jvm-1.6.0.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm/1.6.0/cc50826a455f3b4e5f1f2fce5f6b2118f53dd869/kotlinx-coroutines-core-jvm-1.6.0-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm/1.6.0/9f54cd61cb3434898d895a336190e0107d4d1840/kotlinx-coroutines-core-jvm-1.6.0-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0" level="project" />
+    <orderEntry type="module-library">
+      <library name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.0">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk8/1.6.0/baf82c475e9372c25407f3d132439e4aa803b8b8/kotlin-stdlib-jdk8-1.6.0.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk8/1.6.0/5b8f86fea035328fc9e8c660773037a3401ce25f/kotlin-stdlib-jdk8-1.6.0-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk8/1.6.0/a61c046a90a08dd30eb105b8b8530fce678ecb46/kotlin-stdlib-jdk8-1.6.0-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.0">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/1.6.0/da6bdc87391322974a43ccc00a25536ae74dad51/kotlin-stdlib-jdk7-1.6.0.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/1.6.0/5b8f86fea035328fc9e8c660773037a3401ce25f/kotlin-stdlib-jdk7-1.6.0-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/1.6.0/ccdfdab71f0f3ba104191d8f673d0620e7ed2e46/kotlin-stdlib-jdk7-1.6.0-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

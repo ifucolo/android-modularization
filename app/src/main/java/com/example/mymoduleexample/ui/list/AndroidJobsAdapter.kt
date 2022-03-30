@@ -1,4 +1,4 @@
-package com.example.mymoduleexample.feature.list
+package com.example.mymoduleexample.ui.list
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

@@ -13,12 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".feature.list.AndroidJobsListActivity"
+        <activity android:name=".ui.list.AndroidJobsListActivity"
             android:theme="@style/AppThemeNoAction">
         </activity>
 
         <activity
-            android:name=".feature.main.MainActivity"
+            android:name=".ui.home.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

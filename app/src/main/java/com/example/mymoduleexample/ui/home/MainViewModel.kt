@@ -1,4 +1,4 @@
-package com.example.mymoduleexample.feature.main
+package com.example.mymoduleexample.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -17,9 +17,10 @@ class MainViewModel: ViewModel() {
     fun onOutAppLiveData() {
         _mainActionLiveData.postValue(Event(MainAction.LEAVE_APP))
     }
+
+    sealed class MainAction {
+        object SHOW_JOBS: MainAction()
+        object LEAVE_APP: MainAction()
+    }
 }
 
-sealed class MainAction {
-    object SHOW_JOBS: MainAction()
-    object LEAVE_APP: MainAction()
-}

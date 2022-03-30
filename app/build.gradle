@@ -79,7 +79,13 @@ dependencies {
     implementation dependencies.composeMaterial
     implementation dependencies.composeTooling
     implementation dependencies.composeLivedata
+    implementation dependencies.composeActivity
+    implementation dependencies.composeNavigation
     implementation dependencies.lifecycleKtx
+
+    implementation 'com.google.dagger:hilt-android:2.38.1'
+    kapt 'com.google.dagger:hilt-android-compiler:2.38.1'
+
 
     kapt dependencies.dataBinding
 

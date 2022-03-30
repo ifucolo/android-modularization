@@ -9,7 +9,6 @@ dependencies {
     implementation dependencies.koin
 
     implementation dependencies.coroutinesCore
-    implementation dependencies.coroutinesAndroid
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8

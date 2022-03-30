@@ -1,7 +1,7 @@
 package com.example.mymoduleexample.di
 
-import com.example.mymoduleexample.feature.list.AndroidJobListViewModel
-import com.example.mymoduleexample.feature.main.MainViewModel
+import com.example.mymoduleexample.ui.list.AndroidJobListViewModel
+import com.example.mymoduleexample.ui.home.MainViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

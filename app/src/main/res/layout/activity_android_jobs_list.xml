@@ -8,13 +8,13 @@
         <import type="android.view.View"/>
         <variable
             name="viewModel"
-            type="com.example.mymoduleexample.feature.list.AndroidJobListViewModel" />
+            type="com.example.mymoduleexample.ui.list.AndroidJobListViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".feature.list.AndroidJobsListActivity">
+        tools:context=".ui.list.AndroidJobsListActivity">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"

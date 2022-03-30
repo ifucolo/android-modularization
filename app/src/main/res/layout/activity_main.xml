@@ -8,13 +8,13 @@
         <import type="android.view.View"/>
         <variable
             name="viewModel"
-            type="com.example.mymoduleexample.feature.main.MainViewModel" />
+            type="com.example.mymoduleexample.ui.home.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".feature.main.MainActivity">
+        tools:context=".ui.home.MainActivity">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnShowList"

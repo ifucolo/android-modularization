@@ -1,4 +1,4 @@
-package com.example.mymoduleexample.feature.list
+package com.example.mymoduleexample.ui.list
 
 import android.content.Context
 import android.content.Intent
@@ -6,15 +6,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.domain.entities.AndroidJob
 import com.example.mymoduleexample.R
 import com.example.mymoduleexample.databinding.ActivityAndroidJobsListBinding
-import com.example.mymoduleexample.extension.hide
-import com.example.mymoduleexample.extension.show
-import com.example.mymoduleexample.extension.visible
 import com.example.mymoduleexample.utils.exhaustive
-import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 

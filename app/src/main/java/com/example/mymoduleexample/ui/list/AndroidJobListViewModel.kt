@@ -1,4 +1,4 @@
-package com.example.mymoduleexample.feature.list
+package com.example.mymoduleexample.ui.list
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -8,7 +8,6 @@ import com.example.domain.entities.AndroidJob
 import com.example.domain.usecases.GetJobsUseCases
 import com.example.mymoduleexample.utils.Event
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 
