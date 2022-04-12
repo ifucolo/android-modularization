@@ -30,6 +30,10 @@ class AndroidJobListViewModel @Inject constructor(
                 }
             }
         }
+
+        viewModelScope.launch {
+            jobsUseCase.fetchJobs()
+        }
     }
 
     fun add() {

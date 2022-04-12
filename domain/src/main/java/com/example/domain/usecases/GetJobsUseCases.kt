@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 
 interface GetJobsUseCases{
-    fun fetchJobs()
+    suspend fun fetchJobs()
     fun addJob()
 
     val stream: MutableStateFlow<ResultJobs>
@@ -28,29 +28,26 @@ class GetJobsUseCasesImpl @Inject  constructor(
 
     override val stream: MutableStateFlow<GetJobsUseCases.ResultJobs> = MutableStateFlow(GetJobsUseCases.ResultJobs.Loading)
 
-    override fun fetchJobs() {
-        repository.getJobs()
-            .map {
-                when(it) {
-                    is ResultRequired.Success -> {
-                        when {
-                            it.result.isEmpty() -> {
-                                stream.emit(GetJobsUseCases.ResultJobs.NoJobs)
-                            }
-                            else -> {
-                                stream.emit(GetJobsUseCases.ResultJobs.Jobs( it.result.reversed()))
-                            }
-                        }
+    override suspend fun fetchJobs() {
+        when(val result = repository.getJobs()) {
+            is ResultRequired.Success -> {
+                when {
+                    result.result.isEmpty() -> {
+                        stream.emit(GetJobsUseCases.ResultJobs.NoJobs)
                     }
-                    is ResultRequired.Error -> {
-                        println(it.throwable.message)
-                        stream.emit(GetJobsUseCases.ResultJobs.Error)
-                    }
-                    ResultRequired.Loading -> {
-                        stream.emit(GetJobsUseCases.ResultJobs.Loading)
+                    else -> {
+                        stream.emit(GetJobsUseCases.ResultJobs.Jobs(result.result.reversed()))
                     }
                 }
             }
+            is ResultRequired.Error -> {
+                println(result.throwable.message)
+                stream.emit(GetJobsUseCases.ResultJobs.Error)
+            }
+            ResultRequired.Loading -> {
+                stream.emit(GetJobsUseCases.ResultJobs.Loading)
+            }
+        }
     }
 
     override fun addJob() {

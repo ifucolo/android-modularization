@@ -1,5 +1,7 @@
 package com.example.mymoduleexample.theme
 
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
 val green = Color(0xFF008577)
@@ -10,5 +12,11 @@ val slightWithe = Color(0xFFF1F3F6)
 val slightGray = Color(0x9CF1F3F6)
 
 val cyan = Color(0xFFD1FFFD)
+val black = Color(0xFF000000)
 
+@Composable
+fun tintColor(): Color = if (isSystemInDarkTheme())  black else slightWithe
+
+@Composable
+fun textColor(): Color = if (isSystemInDarkTheme())  black else slightWithe
 

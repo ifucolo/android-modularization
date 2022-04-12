@@ -48,7 +48,7 @@ class MainActivity : ComponentActivity() {
                     viewModel.onShowAndroidJobsRequire()
                 }
             )
-            addListJobsScreenGraph()
+            addListJobsScreenGraph(navController)
         }
 
         viewModel.mainActionLiveData.observe(this) {

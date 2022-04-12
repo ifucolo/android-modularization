@@ -5,6 +5,6 @@ import com.example.domain.responses.ResultRequired
 import kotlinx.coroutines.flow.Flow
 
 interface AndroidJobsRepository {
-    fun getJobs(): Flow<ResultRequired<List<AndroidJob>>>
+    suspend fun getJobs(): ResultRequired<List<AndroidJob>>
     fun add()
 }

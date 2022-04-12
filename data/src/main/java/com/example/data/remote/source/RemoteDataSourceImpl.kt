@@ -22,6 +22,7 @@ class RemoteDataSourceImpl @Inject constructor(
                 response = jobsPayload
             )
         } catch (throwable: Throwable) {
+            println(throwable.message)
             throwable.mapRemoteErrors()
         }
     }
