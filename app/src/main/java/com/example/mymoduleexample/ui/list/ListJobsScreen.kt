@@ -5,9 +5,9 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.Card
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -18,7 +18,6 @@ import androidx.navigation.compose.composable
 import com.example.domain.entities.AndroidJob
 import com.example.mymoduleexample.R
 import com.example.mymoduleexample.theme.marginDefault
-import com.example.mymoduleexample.theme.tintColor
 import com.example.mymoduleexample.theme.verticalSpace
 import com.example.mymoduleexample.ui.Screens
 import com.example.mymoduleexample.ui.components.*
@@ -35,37 +34,27 @@ fun ListJobsScreen(
     viewModel: AndroidJobListViewModel = hiltViewModel<AndroidJobListViewModel>(),
     navController: NavHostController
 ) {
+
+    val uiState: JobsScreenUiState by viewModel.uiState.collectAsState()
+
     Scaffold(
         topBar = {
-            TopAppBar(
-                title = { BigTitle(text = stringResource(id = R.string.jobs_list)) },
-                backgroundColor = MaterialTheme.colors.background,
-                navigationIcon = {
-                    IconButton(onClick = { navController.navigateUp() }) {
-                        Icon(
-                            imageVector = Icons.Filled.ArrowBack,
-                            contentDescription = "Back",
-                            tint = tintColor()
-                        )
-                    }
-                }
-            )
+            AppTopAppBar(title = stringResource(id = R.string.jobs_list)) {
+                navController.navigateUp()
+            }
         }
     ) {
-        when(val state = viewModel.state.collectAsState().value) {
-            AndroidJobListViewModel.JobsUiStateState.Empty -> {
-                EmptyCompose(emptyMsg = stringResource(id = R.string.empty))
-            }
-            AndroidJobListViewModel.JobsUiStateState.Error -> {
+        when(val state = uiState.jobsUiState) {
+            JobsUiState.Error -> {
                 ErrorCompose(errorMsg = stringResource(id = R.string.error_generic))
             }
-            AndroidJobListViewModel.JobsUiStateState.Loading -> {
+            JobsUiState.Loading -> {
                 LoadingCompose()
             }
-            is AndroidJobListViewModel.JobsUiStateState.Show -> {
-                ShowJobsCompose(list = state.list)
+            is JobsUiState.Success -> {
+                ShowJobsCompose(list = state.jobs)
             }
-        } 
+        }
     }
 }
 

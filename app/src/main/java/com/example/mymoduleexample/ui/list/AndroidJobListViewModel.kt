@@ -1,57 +1,84 @@
 package com.example.mymoduleexample.ui.list
 
+import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.domain.entities.AndroidJob
-import com.example.domain.usecases.GetJobsUseCases
+import com.example.domain.repository.AndroidJobsRepository
+import com.example.mymoduleexample.utils.Result
+import com.example.mymoduleexample.utils.WhileUiSubscribed
+import com.example.mymoduleexample.utils.asResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class AndroidJobListViewModel @Inject constructor(
-    private val jobsUseCase: GetJobsUseCases
+    private val repository: AndroidJobsRepository
 ): ViewModel() {
 
-    private val _state: MutableStateFlow<JobsUiStateState> = MutableStateFlow(JobsUiStateState.Loading)
-    val state: StateFlow<JobsUiStateState> = _state
+    private val jobs: Flow<Result<List<AndroidJob>>> =
+        repository.getJobs().asResult()
 
-    init {
-        viewModelScope.launch(Dispatchers.IO) {
-            jobsUseCase.stream.collect { result ->
-                when(result) {
-                    GetJobsUseCases.ResultJobs.Error -> _state.emit(JobsUiStateState.Error)
-                    is GetJobsUseCases.ResultJobs.Jobs -> _state.emit(JobsUiStateState.Show(list = result.list))
-                    GetJobsUseCases.ResultJobs.NoJobs -> _state.emit(JobsUiStateState.Empty)
-                    GetJobsUseCases.ResultJobs.Loading -> _state.emit(JobsUiStateState.Loading)
-                }
-            }
+    private val isRefreshing = MutableStateFlow(false)
+
+    val uiState: StateFlow<JobsScreenUiState> = combine(
+        jobs,
+        isRefreshing
+    ) { jobsResult, refreshing ->
+
+
+        val jobsUiState = when (jobsResult) {
+            is Result.Success -> JobsUiState.Success(jobsResult.data)
+            is Result.Loading -> JobsUiState.Loading
+            is Result.Error -> JobsUiState.Error
         }
 
-        viewModelScope.launch {
-            jobsUseCase.fetchJobs()
-        }
+        JobsScreenUiState(
+            jobsUiState = jobsUiState,
+            isRefreshing = refreshing
+        )
     }
+        .stateIn(
+            scope = viewModelScope,
+            started = WhileUiSubscribed,
+            initialValue = JobsScreenUiState(
+                jobsUiState = JobsUiState.Loading,
+                isRefreshing = false
+            )
+        )
 
     fun add() {
         viewModelScope.launch(Dispatchers.IO) {
-            jobsUseCase.addJob()
+            repository.add()
         }
     }
 
     fun onTryAgainRequired() {
         viewModelScope.launch {
-            jobsUseCase.fetchJobs()
+            val refreshJobsDeferred = async { repository.fetchFreshJobs() }
+            isRefreshing.emit(true)
+            try {
+                awaitAll(refreshJobsDeferred)
+            } finally {
+                isRefreshing.emit(false)
+            }
         }
     }
+}
 
-    sealed class JobsUiStateState {
-        data class Show(val list: List<AndroidJob>): JobsUiStateState()
-        object Empty: JobsUiStateState()
-        object Error: JobsUiStateState()
-        object Loading: JobsUiStateState()
-    }
+data class JobsScreenUiState(
+    val jobsUiState: JobsUiState,
+    val isRefreshing: Boolean,
+)
+
+@Immutable
+sealed interface JobsUiState {
+    data class Success(val jobs: List<AndroidJob>) : JobsUiState
+    object Error : JobsUiState
+    object Loading : JobsUiState
 }

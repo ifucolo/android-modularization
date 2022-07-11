@@ -1,16 +1,15 @@
 package com.example.mymoduleexample.ui.home
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Button
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.example.mymoduleexample.R
 import com.example.mymoduleexample.ui.Screens
+import com.example.mymoduleexample.ui.components.AppTopAppBar
 
 
 internal fun NavGraphBuilder.addHomeScreenGraph(onClick: () -> Unit) {
@@ -23,13 +22,14 @@ internal fun NavGraphBuilder.addHomeScreenGraph(onClick: () -> Unit) {
 fun HomeScreen(
     onClick: () -> Unit
 ) {
-    Box(Modifier.fillMaxSize()) {
+
+    Scaffold(
+        topBar = {
+            AppTopAppBar(title = stringResource(id = R.string.app_name))
+        }
+    ) {
         Button(onClick) {
-            Text(text = stringResource(id = R.string.show_list))
+            Text(text = stringResource(id = R.string.app_name))
         }
     }
-}
-
-private fun setupViewModel() {
-
 }
