@@ -1,44 +1,38 @@
 package com.example.data
 
-import com.example.data.local.mapper.AndroidJobCacheMapper
-import com.example.data.local.source.JobsCacheDataSource
-import com.example.data.remote.mapper.AndroidJobMapper
-import com.example.data.remote.source.RemoteDataSource
+import com.example.data.local.database.JobsDao
+import com.example.data.local.mapper.asCache
+import com.example.data.local.mapper.asExternalModel
+import com.example.data.local.model.AndroidJobCache
+import com.example.data.remote.api.ServerApi
 import com.example.domain.entities.AndroidJob
 import com.example.domain.repository.AndroidJobsRepository
-import com.example.domain.responses.ResultRemote
-import com.example.domain.responses.ResultRequired
+import com.ifucolo.di.IoDispatcher
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.withContext
-import okhttp3.Dispatcher
 import javax.inject.Inject
 
 class AndroidJobsRepositoryImpl @Inject constructor(
-    private val jobsCacheDataSource: JobsCacheDataSource,
-    private val remoteDataSource: RemoteDataSource
-    ): AndroidJobsRepository {
+    private val serverApi: ServerApi,
+    private val jobsDao: JobsDao,
+    @IoDispatcher
+    private val coroutineDispatcher: CoroutineDispatcher
+): AndroidJobsRepository {
 
-    override suspend fun getJobs(): ResultRequired<List<AndroidJob>> =
-        withContext(Dispatchers.IO) {
-            getJobsRemote()
-
-        //            jobsCacheDataSource.getJobs()
-//                .map { cacheList ->
-//                    val result = when {
-//                        cacheList.isEmpty() -> getJobsRemote()
-//                        else -> {
-//                            val jobs = AndroidJobCacheMapper.map(cacheList)
-//                            ResultRequired.Success(jobs)
-//                        }
-//                    }
-//
-//                    result
-//                }
-        }
-
+    override fun getJobs(): Flow<List<AndroidJob>> {
+        //return withContext(coroutineDispatcher) {
+            return jobsDao.getJobs().map { jobs ->
+                jobs.map(AndroidJobCache::asExternalModel)
+            }.onEach {
+                if (it.isEmpty()) {
+                    fetchFreshJobs()
+                }
+            }
+        //}
+    }
 
     override fun add() {
         val androidJob = AndroidJob(
@@ -48,26 +42,16 @@ class AndroidJobsRepositoryImpl @Inject constructor(
             country = "Braziil"
         )
 
-        val cacheJob = AndroidJobCacheMapper.map(androidJob)
-        jobsCacheDataSource.insertData(cacheJob)
+        val cacheJob = androidJob.asCache()
+        jobsDao.insert(cacheJob)
     }
 
-    private suspend fun getJobsRemote(): ResultRequired<List<AndroidJob>> {
-
-        return when(val resultRemote = remoteDataSource.getJobs()) {
-            is ResultRemote.Success -> {
-                val mappedList = AndroidJobMapper.map(resultRemote.response)
-                val cacheList = AndroidJobCacheMapper.mapJobsToCache(mappedList)
-
-                jobsCacheDataSource.updateData(cacheList)
-
-                ResultRequired.Success(
-                    result = mappedList
-                )
-            }
-            is ResultRemote.ErrorResponse -> {
-                ResultRequired.Error(resultRemote.throwable)
-            }
+    override suspend fun fetchFreshJobs() {
+        withContext(coroutineDispatcher) {
+            serverApi.fetchJobs()
+                .also { jobs ->
+                    jobsDao.updateData(jobs.map { it.asCache() })
+                }
         }
     }
 }

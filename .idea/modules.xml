@@ -3,9 +3,21 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android-modularization.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android-modularization.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android-modularization.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android-modularization.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android-modularization.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android-modularization.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android-modularization.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android-modularization.app.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/android-modularization.data.iml" filepath="$PROJECT_DIR$/.idea/modules/data/android-modularization.data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/android-modularization.data.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/data/android-modularization.data.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/android-modularization.data.main.iml" filepath="$PROJECT_DIR$/.idea/modules/data/android-modularization.data.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/android-modularization.data.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/data/android-modularization.data.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/di/android-modularization.di.iml" filepath="$PROJECT_DIR$/.idea/modules/di/android-modularization.di.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/di/android-modularization.di.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/di/android-modularization.di.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/di/android-modularization.di.main.iml" filepath="$PROJECT_DIR$/.idea/modules/di/android-modularization.di.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/di/android-modularization.di.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/di/android-modularization.di.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/android-modularization.domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/android-modularization.domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/android-modularization.domain.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/android-modularization.domain.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/android-modularization.domain.main.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/android-modularization.domain.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/android-modularization.domain.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/android-modularization.domain.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/gthub.android-modularization.iml" filepath="$PROJECT_DIR$/.idea/modules/gthub.android-modularization.iml" />
     </modules>
   </component>

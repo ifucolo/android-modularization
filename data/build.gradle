@@ -28,8 +28,8 @@ dependencies {
     implementation dependencies.kotlin
 
     api dependencies.retrofit
-    api dependencies.retrofitGsonConverter
     api dependencies.gson
+    api 'com.squareup.retrofit2:converter-moshi:2.9.0'
 
     implementation dependencies.room
     implementation dependencies.roomKtx
@@ -37,4 +37,6 @@ dependencies {
 
     implementation dependencies.coroutinesCore
     implementation dependencies.coroutinesAndroid
+
+
 }

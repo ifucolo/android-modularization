@@ -1,9 +1,6 @@
 package com.example.data.local.database
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Transaction
+import androidx.room.*
 import com.example.data.local.model.AndroidJobCache
 import kotlinx.coroutines.flow.Flow
 
@@ -14,13 +11,13 @@ interface JobsDao {
     fun getJobs(): Flow<List<AndroidJobCache>>
 
     @Transaction
-    fun updateData(users: List<AndroidJobCache>) {
+    fun updateData(jobs: List<AndroidJobCache>) {
         deleteAll()
-        insertAll(users)
+        insertAll(jobs)
     }
 
     @Insert
-    fun insertAll(users: List<AndroidJobCache>)
+    fun insertAll(jobs: List<AndroidJobCache>)
 
     @Insert
     fun insert(vararg job: AndroidJobCache)
