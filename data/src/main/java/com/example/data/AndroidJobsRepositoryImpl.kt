@@ -1,8 +1,8 @@
 package com.example.data
 
 import com.example.data.local.database.JobsDao
-import com.example.data.local.mapper.asCache
-import com.example.data.local.mapper.asExternalModel
+import com.example.data.mapper.asCache
+import com.example.data.mapper.asExternalModel
 import com.example.data.local.model.AndroidJobCache
 import com.example.data.remote.api.ServerApi
 import com.example.domain.entities.AndroidJob
@@ -23,15 +23,13 @@ class AndroidJobsRepositoryImpl @Inject constructor(
 ): AndroidJobsRepository {
 
     override fun getJobs(): Flow<List<AndroidJob>> {
-        //return withContext(coroutineDispatcher) {
-            return jobsDao.getJobs().map { jobs ->
-                jobs.map(AndroidJobCache::asExternalModel)
-            }.onEach {
-                if (it.isEmpty()) {
-                    fetchFreshJobs()
-                }
+        return jobsDao.getJobs().map { jobs ->
+            jobs.map(AndroidJobCache::asExternalModel)
+        }.onEach {
+            if (it.isEmpty()) {
+                fetchFreshJobs()
             }
-        //}
+        }
     }
 
     override fun add() {

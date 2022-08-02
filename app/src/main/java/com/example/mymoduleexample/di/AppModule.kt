@@ -2,8 +2,8 @@ package com.example.mymoduleexample.di
 
 import android.content.Context
 import com.example.data.R
-import com.example.data.di.createWebService
-import com.example.data.di.providesOkHttpClient
+import com.example.data.extensions.OkHttpClienProvider
+import com.example.data.extensions.createWebService
 import com.example.data.local.database.JobsDao
 import com.example.data.local.database.JobsDataBase
 import com.example.data.remote.api.ServerApi
@@ -26,7 +26,7 @@ class AppModule {
 
     @Provides
     fun provideOkHttpClient(): OkHttpClient =
-        providesOkHttpClient()
+        OkHttpClienProvider()
 
     @Provides
     fun provideServerApiWebService(

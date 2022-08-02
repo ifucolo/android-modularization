@@ -4,10 +4,6 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 
-@JsonClass(generateAdapter = true)
-class Jobs(
-    @Json(name ="jobs") val jobs: List<AndroidJob>
-)
 
 @JsonClass(generateAdapter = true)
 data class AndroidJob(

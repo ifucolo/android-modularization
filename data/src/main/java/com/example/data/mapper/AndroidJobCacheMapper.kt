@@ -1,4 +1,4 @@
-package com.example.data.local.mapper
+package com.example.data.mapper
 
 import com.example.data.local.model.AndroidJobCache
 import com.example.domain.entities.AndroidJob

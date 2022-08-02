@@ -31,7 +31,7 @@ internal fun NavGraphBuilder.addListJobsScreenGraph(navController: NavHostContro
 
 @Composable
 fun ListJobsScreen(
-    viewModel: AndroidJobListViewModel = hiltViewModel<AndroidJobListViewModel>(),
+    viewModel: AndroidJobListViewModel = hiltViewModel(),
     navController: NavHostController
 ) {
 

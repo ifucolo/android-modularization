@@ -1,4 +1,4 @@
-package com.example.data.di
+package com.example.data.extensions
 
 import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
@@ -7,7 +7,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 
 
-fun providesOkHttpClient(): OkHttpClient {
+fun OkHttpClienProvider(): OkHttpClient {
     return OkHttpClient.Builder()
         .connectTimeout(30, TimeUnit.SECONDS)
         .readTimeout(30, TimeUnit.SECONDS)

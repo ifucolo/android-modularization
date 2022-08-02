@@ -3,12 +3,15 @@ package com.example.mymoduleexample.ui.home
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.domain.repository.AndroidJobsRepository
 import com.example.mymoduleexample.utils.Event
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(): ViewModel() {
+class MainViewModel @Inject constructor(
+    private val repository: AndroidJobsRepository
+): ViewModel() {
 
     private val _mainActionLiveData = MutableLiveData<Event<MainAction>>()
     val mainActionLiveData: LiveData<Event<MainAction>> = _mainActionLiveData

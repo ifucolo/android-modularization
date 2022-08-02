@@ -10,7 +10,6 @@ import dagger.hilt.android.components.ViewModelComponent
 @Module
 @InstallIn(ViewModelComponent::class)
 interface ProductModule {
-
     @Binds
     fun provideAndroidJobsRepository(impl: AndroidJobsRepositoryImpl): AndroidJobsRepository
 }

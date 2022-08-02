@@ -30,8 +30,6 @@ class AndroidJobListViewModel @Inject constructor(
         jobs,
         isRefreshing
     ) { jobsResult, refreshing ->
-
-
         val jobsUiState = when (jobsResult) {
             is Result.Success -> JobsUiState.Success(jobsResult.data)
             is Result.Loading -> JobsUiState.Loading
