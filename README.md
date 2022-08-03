@@ -1,46 +1,28 @@
-## **Android Modularization** 
->  MVVM - KOIN - RX - ROOM - DATABINDING - COROUTINES - FLOW
+# Em atualização...
 
-## Resumo/Overview
-![](https://github.com/ifucolo/android-modularization/blob/presentation/iconfinder_flag-brazil_748057.png) Este projeto faz parte de uma série de 5 artigos, que ensina você a crirar o seu próprio projeto Android modularizado;
+### **Android Modularization** 
+Em atualização...
+>  MVVM - DAGGER HILT - COROUTINES - ROOM - COMPOSE - FLOW
 
-![](https://github.com/ifucolo/android-modularization/blob/presentation/iconfinder_flag-united-kingdom_748024.png) This project is a sample of a series of 5 articles to explain how you can create your android project applying modularization;
+### Resumo/Overview
+![](https://github.com/ifucolo/android-modularization/blob/presentation/iconfinder_flag-brazil_748057.png) Este projeto faz parte de uma série de 9 artigos, que ensina você a crirar o seu próprio projeto Android modularizado;
 
-## Artigos/Articles
-![](https://github.com/ifucolo/android-modularization/blob/presentation/iconfinder_flag-brazil_748057.png)
+![](https://github.com/ifucolo/android-modularization/blob/presentation/iconfinder_flag-united-kingdom_748024.png) This project is a sample of a series of 9 articles to explain how you can create your android project applying modularization;
 
-* [Parte 1](https://medium.com/@iagofucolo/modulariza%C3%A7%C3%A3o-android-parte-1-b69b509571c9)
-* [Parte 2](https://medium.com/@iagofucolo/modulariza%C3%A7%C3%A3o-android-parte-2-aab52b903d90)
-* [Parte 3](https://medium.com/@iagofucolo/modulariza%C3%A7%C3%A3o-android-parte-3-22622ae7d162)
-* [Parte 4](link)
-* [Parte 5](link)
+### Artigos/Articles(pt-br)
 
-
-![](https://github.com/ifucolo/android-modularization/blob/presentation/iconfinder_flag-united-kingdom_748024.png)
-
-Translation in progress....
-
-## Architecture
-- MVVM
-
-## Libs
-* [Koin](https://insert-koin.io/)
-
-* [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
-* [DataBinding](https://developer.android.com/topic/libraries/data-binding)
-* [Room](https://developer.android.com/topic/libraries/architecture/room)
-* [ktx](https://developer.android.com/kotlin/ktx)
-
-* [RxAndroid](https://github.com/ReactiveX/RxAndroid)
-* [RxKotlin](https://github.com/ReactiveX/RxKotlin)
-* [RxJava](https://github.com/ReactiveX/RxJava)
-
-* [Retrofit](https://github.com/ww-tech/roxie/wiki/1.-ViewModel)
-* [Coroutines](https://developer.android.com/topic/libraries/architecture/coroutines)
+* [Modularização Android Parte 1](https://medium.com/@iagofucolo/modulariza%C3%A7%C3%A3o-android-parte-1-b69b509571c9)
+* [Modularização Android Parte 2](https://medium.com/@iagofucolo/modulariza%C3%A7%C3%A3o-android-parte-2-aab52b903d90)
+* [Modularização Android Parte 3](https://medium.com/@iagofucolo/modulariza%C3%A7%C3%A3o-android-parte-3-22622ae7d162)
+* [Modularização Android Parte 4.1 — Refatorando](https://medium.com/android-dev-br/modularização-android-parte-4-1-refatorando-50620faa742c)
+* [Modularização Android Parte 4.2 — Refatorando](https://medium.com/@ifucolo/modularização-android-parte-4-2-refatorando-1e7d89ce3ceb)
+* [Modularização Android Parte 5 - Atualização](https://medium.com/@ifucolo/modularização-android-parte-5-atualização-8e809be4f1a4)
+* [Em progresso - Modularização Android Parte 7- Atualização]()
+* [Em progresso - Modularização Android Parte 6 - Atualização]()
+* [Em progresso - Modularização Android Parte 8- Atualização]()
 
 
-
- ## LICENSE
+ ### LICENSE
 
 ```
 The MIT License (MIT)
